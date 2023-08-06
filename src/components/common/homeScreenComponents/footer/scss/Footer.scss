@@ -1,0 +1,91 @@
+@import "../../../scss/Colors.scss";
+
+#beforeFooterStart {
+  width: 100vw;
+  display: block;
+  bottom: 0;
+  position: sticky;
+  background-color: $application_background_color;
+  #footerCurve {
+    background-color: $footerColor;
+    --b: 0px; /*border*/
+    --r: 35px; /*radius*/
+    --p: 10px; /*offset from top */
+    background: radial-gradient(
+      circle var(--r) at 50% calc(-1 * var(--p)),
+      transparent calc(100% - var(--b) - 1px),
+      $footerColor calc(100% - var(--b)),
+      $footerColor 100%
+    );
+
+    #footerStart {
+      padding: 1rem 0rem;
+      #allActionButtonsExceptAdd {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        button {
+          background-color: inherit;
+          outline: none;
+          border: none;
+          text-decoration: none;
+          color: $actionbuttonExceptAdd;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+          .actionIcons {
+            font-size: 25px;
+          }
+          h2 {
+            font-size: 15px;
+          }
+          &:active {
+            color: white;
+            scale: 1.1 1.1;
+          }
+        }
+      }
+    }
+  }
+}
+
+#addIconBefore {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  #addIcon {
+    position: absolute;
+    bottom: 60px;
+    cursor: pointer;
+    z-index: 55;
+    background-color: #faed5d;
+    font-size: 45px;
+    border-radius: 50%;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #footerCurve {
+    --b: 0px !important; /*border*/
+    --r: 35px !important; /*radius*/
+    --p: 10px !important; /*offset from top */
+    background: radial-gradient(
+      circle var(--r) at 50% calc(-1 * var(--p)),
+      transparent calc(100% - var(--b) - 1px),
+      $footerColor calc(100% - var(--b)),
+      $footerColor 100%
+    ) !important;
+  }
+
+  #addIcon {
+    font-size: 50px !important;
+    padding: 5px !important;
+    margin: 2px !important;
+  }
+}

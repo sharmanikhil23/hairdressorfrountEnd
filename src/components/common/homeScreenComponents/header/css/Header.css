@@ -1,0 +1,149 @@
+.beforeHeaderStart {
+  max-height: 15vh;
+  width: 100%;
+  display: block;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.beforeHeaderStart #headerStart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.beforeHeaderStart #settings {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.beforeHeaderStart #settings h1 {
+  font-weight: 400;
+}
+.beforeHeaderStart #titleAndSearch {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.beforeHeaderStart #titleAndSearch h1 {
+  font-weight: 400;
+}
+.beforeHeaderStart #titleAndSearch #titleAndSearchIcon {
+  color: #757575;
+  font-weight: 600 !important;
+  transition: all ease-in-out 0.3s;
+}
+.beforeHeaderStart #titleAndSearch #titleAndSearchIcon:hover {
+  scale: 1.2 1.2;
+}
+.beforeHeaderStart #SearchBoxAndCancel {
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.beforeHeaderStart #SearchBoxAndCancel #cancel {
+  font-weight: 300;
+  font-size: 1.5rem;
+  transition: all ease-in-out 0.3s;
+}
+.beforeHeaderStart #SearchBoxAndCancel #cancel:hover {
+  scale: 1.2 1.2;
+}
+.beforeHeaderStart #SearchBoxAndCancel #SearchBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #eff0f3;
+}
+.beforeHeaderStart #SearchBoxAndCancel #SearchBox input {
+  background-color: #eff0f3;
+  border: none;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+}
+.beforeHeaderStart #SearchBoxAndCancel #SearchBox input:focus {
+  outline: none;
+}
+.beforeHeaderStart #SearchBoxAndCancel #SearchBox #SearchBoxAndCancelIcon {
+  display: block;
+  font-size: 1.5rem;
+  padding: 0.1rem 0.1rem;
+  color: #757575;
+  font-weight: 800;
+}
+.beforeHeaderStart #addCustomerOrCancel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.beforeHeaderStart #addCustomerOrCancel #addCustomerOrCancelSection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.beforeHeaderStart #addCustomerOrCancel #addCustomerOrCancelSection svg {
+  left: 0px;
+  font-size: 1.5rem;
+  color: #8e8f90;
+  font-weight: 800;
+}
+.beforeHeaderStart #addCustomerOrCancel #addCustomerOrCancelSection h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+}
+.beforeHeaderStart #addCustomerOrCancel #completed {
+  margin: 1rem 0px 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.beforeHeaderStart #addCustomerOrCancel #completed #completedFirst,
+.beforeHeaderStart #addCustomerOrCancel #completed #completedSecond {
+  margin: 0px 1rem;
+  height: 6px;
+  content: " ";
+  width: 45%;
+  background-color: #eff0f3;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 480px) {
+  .beforeHeaderStart {
+    height: 10vh;
+  }
+  #titleAndSearch h1 {
+    font-size: 1.5rem;
+    font-weight: 700 !important;
+  }
+  #titleAndSearch #titleAndSearchIcon {
+    font-size: 1.4rem;
+    font-weight: 1000 !important;
+  }
+  #SearchBoxAndCancel #SearchBox input {
+    font-size: 1rem !important;
+    font-weight: 600;
+  }
+  #SearchBoxAndCancel #SearchBox #SearchBoxAndCancelIcon {
+    font-size: 1.2rem !important;
+  }
+  #SearchBoxAndCancel #cancel {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+  }
+}/*# sourceMappingURL=Header.css.map */

@@ -1,0 +1,65 @@
+@import "../../Common/scss/Colors.scss";
+
+#beforeClientStart {
+  background-color: $application_background_color;
+  width: 100%;
+  min-height: 70vh;
+  max-height: 80vh;
+  overflow: auto;
+  #clientStart {
+    height: 100%;
+    padding: 1rem 0rem 1rem;
+    scrollbar-color: auto;
+    scrollbar-width: 1px;
+    tab-size: 10px;
+    scroll-behavior: smooth;
+    .clients {
+      margin: 1rem 0rem;
+      padding: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: opacity 0.1s ease-in;
+      transition: scale 0.2s ease-in;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+      &:hover {
+        scale: 1.01;
+      }
+      &:active {
+        opacity: 0.5;
+      }
+
+      .titleAndPrice,
+      .lastUpdateAndTotalVisit {
+        margin: 0.2rem 0rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+
+      .lastUpdateAndTotalVisit {
+        p {
+          font-size: 13px;
+          font-weight: 300;
+        }
+        .lastUpdated {
+          font-weight: 500;
+        }
+      }
+      .viewDetails {
+        text-align: right;
+        color: #eed61f;
+      }
+    }
+  }
+}

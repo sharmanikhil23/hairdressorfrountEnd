@@ -1,0 +1,51 @@
+//importing different Files
+@import "./Colors.scss";
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  width: 100vw;
+  max-height: 100vh;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background-color: $application_background_color;
+  #root {
+    width: 100vw;
+    min-height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.applicationWidth {
+  width: 70vw;
+  margin: 0px auto;
+}
+
+@media screen and (max-width: 480px) {
+  .applicationWidth {
+    width: 90vw;
+    margin: 0px auto;
+  }
+}
+
+#testing {
+  overflow: auto;
+  max-height: 100vh;
+}
+
+#add {
+  display: block;
+  width: 0vw;
+  height: 100vh;
+  left: 0px;
+}
