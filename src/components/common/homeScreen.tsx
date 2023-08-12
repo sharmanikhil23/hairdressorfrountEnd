@@ -28,6 +28,8 @@ export const HomeScreen = () => {
           <HomeScreenHeader
             pageSelector={pageSelector}
             setPageSelector={setPageSelector}
+            addCustomerFormNumber={addCustomerFormNumber}
+            setAddCustomerFormNumber={setAddCustomerFormNumber}
           ></HomeScreenHeader>
           {pageSelector.addNew && (
             <AddCustomers
@@ -47,48 +49,3 @@ export const HomeScreen = () => {
     </>
   );
 };
-
-// type pageSelector = {
-//   pageSelector: {
-//     addNew: boolean;
-//     setting: boolean;
-//     customers: boolean;
-//   };
-//   setPageSelector: React.Dispatch<
-//     React.SetStateAction<{
-//       addNew: boolean;
-//       setting: boolean;
-//       customers: boolean;
-//     }>
-//   >;
-// };
-
-// type pageSelector1 = {
-//   addNew: boolean;
-//   setting: boolean;
-//   customers: boolean;
-// };
-// const AddNewItems = (props: pageSelector) => {
-//   const { setPageSelector } = props;
-//   return (
-//     <div id="add">
-//       <h1>Hello World</h1>
-
-//       <button
-//         onClick={(e) => {
-//           e.preventDefault();
-//           setPageSelector((current: pageSelector1) => {
-//             let temp = {
-//               addNew: false,
-//               setting: false,
-//               customers: true,
-//             };
-//             return temp;
-//           });
-//         }}
-//       >
-//         goBack
-//       </button>
-//     </div>
-//   );
-// };

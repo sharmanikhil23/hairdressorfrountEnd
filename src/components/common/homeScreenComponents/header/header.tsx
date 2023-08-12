@@ -11,7 +11,12 @@ type searching = {
   setSearch: Dispatch<SetStateAction<boolean>>;
 };
 
-type pageSelector = {
+interface addCustomerFormNumber {
+  addCustomerFormNumber: number;
+  setAddCustomerFormNumber: Dispatch<SetStateAction<number>>;
+}
+
+interface pageSelector {
   pageSelector: {
     addNew: boolean;
     setting: boolean;
@@ -20,10 +25,17 @@ type pageSelector = {
   setPageSelector: Dispatch<
     SetStateAction<{ addNew: boolean; setting: boolean; customers: boolean }>
   >;
-};
+}
 
-export const HomeScreenHeader = (props: pageSelector) => {
-  const { pageSelector, setPageSelector } = props;
+type props = addCustomerFormNumber & pageSelector;
+
+export const HomeScreenHeader = (props: props) => {
+  const {
+    pageSelector,
+    setPageSelector,
+    addCustomerFormNumber,
+    setAddCustomerFormNumber,
+  } = props;
   const [search, setSearch] = useState<boolean>(false);
 
   return (
@@ -34,6 +46,8 @@ export const HomeScreenHeader = (props: pageSelector) => {
             <AddingCustomer
               pageSelector={pageSelector}
               setPageSelector={setPageSelector}
+              addCustomerFormNumber={addCustomerFormNumber}
+              setAddCustomerFormNumber={setAddCustomerFormNumber}
             ></AddingCustomer>
           ) : pageSelector.setting === true ? (
             <Setting></Setting>
@@ -105,14 +119,16 @@ const Setting = () => {
   );
 };
 
-const AddingCustomer = (props: pageSelector) => {
-  const { setPageSelector } = props;
+const AddingCustomer = (props: props) => {
+  const { setPageSelector, setAddCustomerFormNumber } = props;
+
   return (
     <div id="addCustomerOrCancel" className="applicationheader">
       <section id="addCustomerOrCancelSection">
         <RxCross1
           onClick={(e) => {
             e.preventDefault();
+            setAddCustomerFormNumber(1);
             setPageSelector((current: pageSelector1) => {
               let temp = {
                 addNew: false,
