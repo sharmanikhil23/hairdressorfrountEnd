@@ -1,0 +1,20 @@
+#secondFormCheckBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#secondFormCheckBox section {
+  width: 30%;
+  border: 1px solid #8e8f90;
+  margin: 0.3rem 0rem;
+  border-radius: 0.2rem;
+  padding: 0.3rem;
+}
+#secondFormCheckBox section input {
+  margin: 0rem 0.2rem;
+}
+#secondFormCheckBox section:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=secondForm.css.map */
