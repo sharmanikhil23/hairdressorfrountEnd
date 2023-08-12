@@ -82,12 +82,17 @@
   background-color: #faed5d;
   width: 40%;
   text-align: center;
-  font-weight: 400;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 #addScreenFooter div #addScreenFooterBackBtn {
   background-color: #313647;
   color: white;
   display: none;
+}
+#addScreenFooter div #addScreenFooterNextBtn:hover {
+  scale: 1.1 1.1;
 }
 
 @media screen and (max-width: 480px) {

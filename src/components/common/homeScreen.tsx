@@ -19,6 +19,8 @@ export const HomeScreen = () => {
     customers: true,
   });
 
+  const [addCustomerFormNumber, setAddCustomerFormNumber] = useState<number>(1);
+
   return (
     <>
       {
@@ -27,12 +29,17 @@ export const HomeScreen = () => {
             pageSelector={pageSelector}
             setPageSelector={setPageSelector}
           ></HomeScreenHeader>
-          {pageSelector.addNew && <AddCustomers></AddCustomers>}
+          {pageSelector.addNew && (
+            <AddCustomers
+              addCustomerFormNumber={addCustomerFormNumber}
+            ></AddCustomers>
+          )}
           {pageSelector.customers && <CustomerArea></CustomerArea>}
           {pageSelector.setting && <Setting></Setting>}
           <HomeScreenFooter
             pageSelector={pageSelector}
             setPageSelector={setPageSelector}
+            setAddCustomerFormNumber={setAddCustomerFormNumber}
           ></HomeScreenFooter>
         </>
       }

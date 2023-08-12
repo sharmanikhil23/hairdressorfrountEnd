@@ -89,12 +89,19 @@
       background-color: $add_button;
       width: 40%;
       text-align: center;
-      font-weight: 400;
+      font-weight: 600;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
     }
     #addScreenFooterBackBtn {
       background-color: $footerColor;
       color: white;
       display: none;
+    }
+    #addScreenFooterNextBtn {
+      &:hover {
+        scale: 1.1 1.1;
+      }
     }
   }
 }

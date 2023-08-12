@@ -122,6 +122,9 @@
   background-color: #eff0f3;
   border-radius: 5px;
 }
+.beforeHeaderStart #addCustomerOrCancel #completed #completedFirst {
+  background-color: #faed5d;
+}
 
 @media screen and (max-width: 480px) {
   .beforeHeaderStart {

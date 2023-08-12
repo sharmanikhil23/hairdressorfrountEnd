@@ -1,11 +1,16 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { MdSettings } from "react-icons/md";
 import { BsPeopleFill, BsPlusLg } from "react-icons/bs";
 
 //css
 import "./css/Footer.css";
+import { type } from "os";
 
-type pageSelector = {
+interface setAddCustomerFormNumber {
+  setAddCustomerFormNumber: Dispatch<SetStateAction<number>>;
+}
+
+interface pageSelector {
   pageSelector: {
     addNew: boolean;
     setting: boolean;
@@ -18,15 +23,19 @@ type pageSelector = {
       customers: boolean;
     }>
   >;
-};
+}
 
-export const HomeScreenFooter = (props: pageSelector) => {
-  const { pageSelector, setPageSelector } = props;
+type props = setAddCustomerFormNumber & pageSelector;
+
+export const HomeScreenFooter = (props: props) => {
+  const { pageSelector, setPageSelector, setAddCustomerFormNumber } = props;
   const animatingAddingPage = () => {};
   return (
     <>
       {pageSelector.addNew === true ? (
-        <AddScreenFooter></AddScreenFooter>
+        <AddScreenFooter
+          setAddCustomerFormNumber={setAddCustomerFormNumber}
+        ></AddScreenFooter>
       ) : (
         <div id="beforeFooterStart">
           <div id="addIconBefore">
@@ -92,14 +101,44 @@ export const HomeScreenFooter = (props: pageSelector) => {
     </>
   );
 };
-const AddScreenFooter = () => {
+const AddScreenFooter = (prop: setAddCustomerFormNumber) => {
   return (
     <div id="addScreenFooter">
       <div className="applicationWidth">
-        <div id="addScreenFooterBackBtn" className="addScreenFooterBtn">
+        <div
+          id="addScreenFooterBackBtn"
+          className="addScreenFooterBtn"
+          onClick={(e) => {
+            e.preventDefault();
+            prop.setAddCustomerFormNumber(1);
+            let elm: HTMLElement | null = document.getElementById(
+              "addScreenFooterBackBtn"
+            );
+
+            if (elm == null) {
+              return;
+            }
+            elm.style.display = "none";
+          }}
+        >
           Back
         </div>
-        <div id="addScreenFooterNextBtn" className="addScreenFooterBtn">
+        <div
+          id="addScreenFooterNextBtn"
+          className="addScreenFooterBtn"
+          onClick={(e) => {
+            e.preventDefault();
+            prop.setAddCustomerFormNumber(2);
+            let elm: HTMLElement | null = document.getElementById(
+              "addScreenFooterBackBtn"
+            );
+
+            if (elm == null) {
+              return;
+            }
+            elm.style.display = "block";
+          }}
+        >
           Next
         </div>
       </div>
