@@ -6,15 +6,21 @@
   flex-direction: column;
   justify-content: center;
 
-  section {
+  > section {
     margin: 0.3rem 0rem;
+    width: 100%;
   }
   #firstAndLastName,
   #multiplePhn {
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    > section {
+      width: 40%;
+    }
   }
   #birthday,
   #email {
@@ -35,6 +41,7 @@
 }
 
 .customerAddFormInput {
+  width: 100%;
   border: 1px solid $actionbuttonExceptAdd;
   background-color: $application_background_color;
   display: block;

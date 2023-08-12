@@ -4,15 +4,22 @@
   flex-direction: column;
   justify-content: center;
 }
-#firstAddCustomerForm section {
+#firstAddCustomerForm > section {
   margin: 0.3rem 0rem;
+  width: 100%;
 }
 #firstAddCustomerForm #firstAndLastName,
 #firstAddCustomerForm #multiplePhn {
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+#firstAddCustomerForm #firstAndLastName > section,
+#firstAddCustomerForm #multiplePhn > section {
+  width: 40%;
 }
 #firstAddCustomerForm #birthday input,
 #firstAddCustomerForm #email input {
@@ -30,6 +37,7 @@
 }
 
 .customerAddFormInput {
+  width: 100%;
   border: 1px solid #8e8f90;
   background-color: #eff0f3;
   display: block;
