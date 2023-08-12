@@ -74,7 +74,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5rem auto;
+  margin: 0.5rem auto 0.7rem;
 }
 #addScreenFooter div .addScreenFooterBtn {
   padding: 0.3rem 1rem;
@@ -85,14 +85,15 @@
   font-weight: 600;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  border-radius: 0.2rem;
+}
+#addScreenFooter div .addScreenFooterBtn:hover {
+  scale: 1.1 1.1;
 }
 #addScreenFooter div #addScreenFooterBackBtn {
   background-color: #313647;
   color: white;
   display: none;
-}
-#addScreenFooter div #addScreenFooterNextBtn:hover {
-  scale: 1.1 1.1;
 }
 
 @media screen and (max-width: 480px) {

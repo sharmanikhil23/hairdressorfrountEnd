@@ -6,6 +6,7 @@ import { BsPeopleFill, BsPlusLg } from "react-icons/bs";
 import "./css/Footer.css";
 
 interface setAddCustomerFormNumber {
+  addCustomerFormNumber: number;
   setAddCustomerFormNumber: Dispatch<SetStateAction<number>>;
 }
 
@@ -27,13 +28,19 @@ interface pageSelector {
 type props = setAddCustomerFormNumber & pageSelector;
 
 export const HomeScreenFooter = (props: props) => {
-  const { pageSelector, setPageSelector, setAddCustomerFormNumber } = props;
+  const {
+    pageSelector,
+    setPageSelector,
+    setAddCustomerFormNumber,
+    addCustomerFormNumber,
+  } = props;
   const animatingAddingPage = () => {};
   return (
     <>
       {pageSelector.addNew === true ? (
         <AddScreenFooter
           setAddCustomerFormNumber={setAddCustomerFormNumber}
+          addCustomerFormNumber={addCustomerFormNumber}
         ></AddScreenFooter>
       ) : (
         <div id="beforeFooterStart">
@@ -138,7 +145,7 @@ const AddScreenFooter = (prop: setAddCustomerFormNumber) => {
             elm.style.display = "block";
           }}
         >
-          Next
+          {prop.addCustomerFormNumber === 1 ? "Next" : "Save"}
         </div>
       </div>
     </div>

@@ -1,0 +1,41 @@
+#firstAddCustomerForm {
+  color: #8e8f90;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#firstAddCustomerForm section {
+  margin: 0.3rem 0rem;
+}
+#firstAddCustomerForm #firstAndLastName,
+#firstAddCustomerForm #multiplePhn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#firstAddCustomerForm #birthday input,
+#firstAddCustomerForm #email input {
+  width: 100%;
+}
+
+.customerAddFormElmAlighn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.customerAddFormElmAlighn label {
+  margin: 0.3rem 0rem;
+}
+
+.customerAddFormInput {
+  border: 1px solid #8e8f90;
+  background-color: #eff0f3;
+  display: block;
+  font-size: 1rem;
+  padding: 0.2rem 0.4rem;
+}
+.customerAddFormInput:focus {
+  outline: none;
+}/*# sourceMappingURL=firstForm.css.map */

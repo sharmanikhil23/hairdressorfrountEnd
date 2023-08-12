@@ -40,6 +40,7 @@ export const HomeScreen = () => {
             pageSelector={pageSelector}
             setPageSelector={setPageSelector}
             setAddCustomerFormNumber={setAddCustomerFormNumber}
+            addCustomerFormNumber={addCustomerFormNumber}
           ></HomeScreenFooter>
         </>
       }

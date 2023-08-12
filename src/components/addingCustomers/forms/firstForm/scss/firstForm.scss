@@ -1,0 +1,46 @@
+@import "../../../../common/scss/Colors.scss";
+
+#firstAddCustomerForm {
+  color: $actionbuttonExceptAdd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  section {
+    margin: 0.3rem 0rem;
+  }
+  #firstAndLastName,
+  #multiplePhn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #birthday,
+  #email {
+    input {
+      width: 100%;
+    }
+  }
+}
+
+.customerAddFormElmAlighn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  label {
+    margin: 0.3rem 0rem;
+  }
+}
+
+.customerAddFormInput {
+  border: 1px solid $actionbuttonExceptAdd;
+  background-color: $application_background_color;
+  display: block;
+  font-size: 1rem;
+  padding: 0.2rem 0.4rem;
+  &:focus {
+    outline: none;
+  }
+}

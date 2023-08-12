@@ -82,7 +82,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0.5rem auto;
+    margin: 0.5rem auto 0.7rem;
     .addScreenFooterBtn {
       padding: 0.3rem 1rem;
       display: block;
@@ -92,16 +92,15 @@
       font-weight: 600;
       transition: all 0.3s ease-in-out;
       cursor: pointer;
+      border-radius: 0.2rem;
+      &:hover {
+        scale: 1.1 1.1;
+      }
     }
     #addScreenFooterBackBtn {
       background-color: $footerColor;
       color: white;
       display: none;
-    }
-    #addScreenFooterNextBtn {
-      &:hover {
-        scale: 1.1 1.1;
-      }
     }
   }
 }
