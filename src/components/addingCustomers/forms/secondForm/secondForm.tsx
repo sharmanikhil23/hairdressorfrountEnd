@@ -62,7 +62,8 @@ export const SecondAddCustomerForm = () => {
         <section
           onClick={(e) => {
             e.preventDefault();
-            e.currentTarget.getElementsByTagName("input")[0].checked = true;
+            e.currentTarget.getElementsByTagName("input")[0].checked =
+              !e.currentTarget.getElementsByTagName("input")[0].checked;
           }}
         >
           <input type="checkbox" />
@@ -72,7 +73,8 @@ export const SecondAddCustomerForm = () => {
         <section
           onClick={(e) => {
             e.preventDefault();
-            e.currentTarget.getElementsByTagName("input")[0].checked = true;
+            e.currentTarget.getElementsByTagName("input")[0].checked =
+              !e.currentTarget.getElementsByTagName("input")[0].checked;
           }}
         >
           <input type="checkbox" />
@@ -82,7 +84,8 @@ export const SecondAddCustomerForm = () => {
         <section
           onClick={(e) => {
             e.preventDefault();
-            e.currentTarget.getElementsByTagName("input")[0].checked = true;
+            e.currentTarget.getElementsByTagName("input")[0].checked =
+              !e.currentTarget.getElementsByTagName("input")[0].checked;
           }}
         >
           <input type="checkbox" />
@@ -91,7 +94,8 @@ export const SecondAddCustomerForm = () => {
         <section
           onClick={(e) => {
             e.preventDefault();
-            e.currentTarget.getElementsByTagName("input")[0].checked = true;
+            e.currentTarget.getElementsByTagName("input")[0].checked =
+              !e.currentTarget.getElementsByTagName("input")[0].checked;
           }}
         >
           <input type="checkbox" />
@@ -100,7 +104,8 @@ export const SecondAddCustomerForm = () => {
         <section
           onClick={(e) => {
             e.preventDefault();
-            e.currentTarget.getElementsByTagName("input")[0].checked = true;
+            e.currentTarget.getElementsByTagName("input")[0].checked =
+              !e.currentTarget.getElementsByTagName("input")[0].checked;
           }}
         >
           <input type="checkbox" />
@@ -109,7 +114,8 @@ export const SecondAddCustomerForm = () => {
         <section
           onClick={(e) => {
             e.preventDefault();
-            e.currentTarget.getElementsByTagName("input")[0].checked = true;
+            e.currentTarget.getElementsByTagName("input")[0].checked =
+              !e.currentTarget.getElementsByTagName("input")[0].checked;
           }}
         >
           <input type="checkbox" />

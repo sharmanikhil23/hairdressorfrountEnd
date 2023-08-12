@@ -1,20 +1,29 @@
 #secondFormCheckBox {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 #secondFormCheckBox section {
   width: 30%;
   border: 1px solid #8e8f90;
-  margin: 0.3rem 0rem;
+  margin: 0.3rem 0.3rem;
   border-radius: 0.2rem;
   padding: 0.3rem;
 }
 #secondFormCheckBox section input {
   margin: 0rem 0.2rem;
 }
+#secondFormCheckBox section label:hover {
+  cursor: pointer;
+}
 #secondFormCheckBox section:hover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  #secondFormCheckBox section {
+    width: 45%;
+  }
 }/*# sourceMappingURL=secondForm.css.map */
