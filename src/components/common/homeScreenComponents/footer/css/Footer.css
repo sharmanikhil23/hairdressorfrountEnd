@@ -62,6 +62,34 @@
   padding: 5px;
 }
 
+#addScreenFooter {
+  width: 100vw;
+  display: block;
+  bottom: 0;
+  position: sticky;
+  background-color: #eff0f3;
+}
+#addScreenFooter div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem auto;
+}
+#addScreenFooter div .addScreenFooterBtn {
+  padding: 0.3rem 1rem;
+  display: block;
+  background-color: #faed5d;
+  width: 40%;
+  text-align: center;
+  font-weight: 400;
+}
+#addScreenFooter div #addScreenFooterBackBtn {
+  background-color: #313647;
+  color: white;
+  display: none;
+}
+
 @media screen and (max-width: 480px) {
   #footerCurve {
     --b: 0px !important; /*border*/

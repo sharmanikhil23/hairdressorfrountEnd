@@ -6,6 +6,7 @@ import { Setting } from "../settings/setting";
 
 //importing css
 import "./css/HomeScreen.css";
+import { AddCustomers } from "../addingCustomers/addCustomer";
 
 export const HomeScreen = () => {
   const [pageSelector, setPageSelector] = useState<{
@@ -20,18 +21,13 @@ export const HomeScreen = () => {
 
   return (
     <>
-      {pageSelector.addNew === true ? (
-        <AddNewItems
-          pageSelector={pageSelector}
-          setPageSelector={setPageSelector}
-        ></AddNewItems>
-      ) : (
+      {
         <>
           <HomeScreenHeader
             pageSelector={pageSelector}
             setPageSelector={setPageSelector}
           ></HomeScreenHeader>
-
+          {pageSelector.addNew && <AddCustomers></AddCustomers>}
           {pageSelector.customers && <CustomerArea></CustomerArea>}
           {pageSelector.setting && <Setting></Setting>}
           <HomeScreenFooter
@@ -39,52 +35,52 @@ export const HomeScreen = () => {
             setPageSelector={setPageSelector}
           ></HomeScreenFooter>
         </>
-      )}
+      }
     </>
   );
 };
 
-type pageSelector = {
-  pageSelector: {
-    addNew: boolean;
-    setting: boolean;
-    customers: boolean;
-  };
-  setPageSelector: React.Dispatch<
-    React.SetStateAction<{
-      addNew: boolean;
-      setting: boolean;
-      customers: boolean;
-    }>
-  >;
-};
+// type pageSelector = {
+//   pageSelector: {
+//     addNew: boolean;
+//     setting: boolean;
+//     customers: boolean;
+//   };
+//   setPageSelector: React.Dispatch<
+//     React.SetStateAction<{
+//       addNew: boolean;
+//       setting: boolean;
+//       customers: boolean;
+//     }>
+//   >;
+// };
 
-type pageSelector1 = {
-  addNew: boolean;
-  setting: boolean;
-  customers: boolean;
-};
-const AddNewItems = (props: pageSelector) => {
-  const { setPageSelector } = props;
-  return (
-    <div id="add">
-      <h1>Hello World</h1>
+// type pageSelector1 = {
+//   addNew: boolean;
+//   setting: boolean;
+//   customers: boolean;
+// };
+// const AddNewItems = (props: pageSelector) => {
+//   const { setPageSelector } = props;
+//   return (
+//     <div id="add">
+//       <h1>Hello World</h1>
 
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          setPageSelector((current: pageSelector1) => {
-            let temp = {
-              addNew: false,
-              setting: false,
-              customers: true,
-            };
-            return temp;
-          });
-        }}
-      >
-        goBack
-      </button>
-    </div>
-  );
-};
+//       <button
+//         onClick={(e) => {
+//           e.preventDefault();
+//           setPageSelector((current: pageSelector1) => {
+//             let temp = {
+//               addNew: false,
+//               setting: false,
+//               customers: true,
+//             };
+//             return temp;
+//           });
+//         }}
+//       >
+//         goBack
+//       </button>
+//     </div>
+//   );
+// };

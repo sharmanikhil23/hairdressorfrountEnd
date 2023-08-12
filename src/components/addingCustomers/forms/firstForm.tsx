@@ -1,5 +1,5 @@
 import React from "react";
 
 export const firstForm = () => {
-  <h1></h1>;
+  <h1>Hello From First Form</h1>;
 };

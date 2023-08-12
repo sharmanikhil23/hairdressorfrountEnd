@@ -1,0 +1,11 @@
+#root {
+  background-color: #fff;
+}
+
+#beforeAddCustomerFormAreaStart {
+  background-color: #fff;
+  width: 100%;
+  min-height: 70vh;
+  max-height: 80vh;
+  overflow: auto;
+}/*# sourceMappingURL=addCustomer.css.map */

@@ -1,0 +1,12 @@
+@import "../../common/scss/Colors.scss";
+
+#root {
+  background-color: $header_background_color;
+}
+#beforeAddCustomerFormAreaStart {
+  background-color: $header_background_color;
+  width: 100%;
+  min-height: 70vh;
+  max-height: 80vh;
+  overflow: auto;
+}
