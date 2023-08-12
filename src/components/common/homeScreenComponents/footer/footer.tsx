@@ -4,7 +4,6 @@ import { BsPeopleFill, BsPlusLg } from "react-icons/bs";
 
 //css
 import "./css/Footer.css";
-import { type } from "os";
 
 interface setAddCustomerFormNumber {
   setAddCustomerFormNumber: Dispatch<SetStateAction<number>>;
