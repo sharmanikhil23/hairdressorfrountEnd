@@ -1,12 +1,13 @@
 @import "../../../../common/scss/Colors.scss";
 
 #firstAddCustomerForm {
-  padding: 1rem 0rem;
+  margin-bottom: 3rem;
+  padding: 1rem 0rem 3rem;
   color: $actionbuttonExceptAdd;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  align-items: center;
   > section {
     margin: 0.3rem 0rem;
     width: 100%;
@@ -29,6 +30,14 @@
       width: 100% !important;
     }
   }
+
+  #birthday {
+    display: block;
+    overflow: hidden;
+    input {
+      min-width: -webkit-fill-available;
+    }
+  }
 }
 
 .customerAddFormElmAlighn {
@@ -46,7 +55,7 @@
   border: 1px solid $actionbuttonExceptAdd;
   background-color: $application_background_color;
   display: block;
-  font-size: 1rem;
+  font-size: 18px;
   padding: 0.2rem 0.4rem;
   &:focus {
     outline: none;

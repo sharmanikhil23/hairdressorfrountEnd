@@ -39,11 +39,11 @@ export const SecondAddCustomerForm = () => {
       <section id="firstAndLastName">
         <section className="customerAddFormElmAlighn">
           <label>Level</label>
-          <input type="text" className="customerAddFormInput"></input>
+          <input type="number" className="customerAddFormInput"></input>
         </section>
         <section className="customerAddFormElmAlighn">
           <label>Tone</label>
-          <input type="text" className="customerAddFormInput"></input>
+          <input type="number" className="customerAddFormInput"></input>
         </section>
       </section>
 
