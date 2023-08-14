@@ -51,6 +51,7 @@ export const FirstAddCustomerForm = (props: prop) => {
       </section>
       <section id="birthday" className="customerAddFormElmAlighn">
         <label htmlFor="birthday">Birthday</label>
+
         <input
           placeholder="yyyy-mm-dd"
           type="date"

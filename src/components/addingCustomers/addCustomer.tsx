@@ -17,7 +17,25 @@ export type user = {
   birthday: string;
 };
 
-const initialVal: user = {
+export type userInitialHair = {
+  texture: string;
+  condition: string;
+  naturalForm: string;
+  level: number;
+  tone: number;
+  front: number;
+  back: number;
+  perm: boolean;
+  semi: boolean;
+  highlighted: boolean;
+  relaxer: boolean;
+  tint: boolean;
+  bleach: boolean;
+  date: string;
+  result: string;
+};
+
+const initialUser: user = {
   firstName: "",
   lastName: "",
   email: "",
@@ -25,9 +43,29 @@ const initialVal: user = {
   wPhone: "",
   birthday: "",
 };
+
+// const initialUserHair: userInitialHair = {
+//   condition: "",
+//   naturalForm: "",
+//   level: 0,
+//   tone: 0,
+//   front: 0,
+//   back: 0,
+//   perm: false,
+//   semi: false,
+//   highlighted: false,
+//   relaxer: false,
+//   tint: false,
+//   bleach: false,
+//   date: "",
+//   result: "",
+//   texture: "",
+// };
+
 export const AddCustomers = (props: addCustomerFormNumber) => {
   const { addCustomerFormNumber } = props;
-  const [user, setUser] = useState<user>(initialVal);
+  const [user, setUser] = useState<user>(initialUser);
+  // const [userHair, setUserHair] = useState<userInitialHair>(initialUserHair);
 
   return (
     <>

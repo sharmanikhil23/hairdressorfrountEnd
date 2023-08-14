@@ -26,14 +26,11 @@
 }
 #firstAddCustomerForm #birthday input,
 #firstAddCustomerForm #email input {
-  width: 100% !important;
+  width: 100%;
 }
 #firstAddCustomerForm #birthday {
   display: block;
   overflow: hidden;
-}
-#firstAddCustomerForm #birthday input {
-  min-width: -webkit-fill-available;
 }
 
 .customerAddFormElmAlighn {

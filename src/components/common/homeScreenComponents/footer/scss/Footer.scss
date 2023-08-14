@@ -3,8 +3,8 @@
 #beforeFooterStart {
   width: 100vw;
   display: block;
-  bottom: 0;
   position: sticky;
+  bottom: 0px;
   background-color: $application_background_color;
   #footerCurve {
     background-color: $footerColor;

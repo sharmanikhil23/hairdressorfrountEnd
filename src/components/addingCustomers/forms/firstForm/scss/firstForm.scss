@@ -27,16 +27,13 @@
   #birthday,
   #email {
     input {
-      width: 100% !important;
+      width: 100%;
     }
   }
 
   #birthday {
     display: block;
     overflow: hidden;
-    input {
-      min-width: -webkit-fill-available;
-    }
   }
 }
 

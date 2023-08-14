@@ -1,8 +1,8 @@
 #beforeFooterStart {
   width: 100vw;
   display: block;
-  bottom: 0;
   position: sticky;
+  bottom: 0px;
   background-color: #eff0f3;
 }
 #beforeFooterStart #footerCurve {
