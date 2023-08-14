@@ -7,8 +7,8 @@
 
 body {
   width: 100vw;
-  min-height: -webkit-fill-available;
   max-height: -webkit-fill-available;
+  min-height: 100vh;
   display: block;
   position: relative;
   overflow: hidden;
@@ -16,8 +16,8 @@ body {
 }
 body #root {
   width: 100vw;
-  min-height: -webkit-fill-available;
   max-height: -webkit-fill-available;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
