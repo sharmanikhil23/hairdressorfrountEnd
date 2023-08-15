@@ -6,6 +6,7 @@ import { SecondAddCustomerForm } from "./forms/secondForm/secondForm";
 
 type addCustomerFormNumber = {
   addCustomerFormNumber: number;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export type user = {
@@ -21,10 +22,10 @@ export type userInitialHair = {
   texture: string;
   condition: string;
   naturalForm: string;
-  level: number;
-  tone: number;
-  front: number;
-  back: number;
+  level: string;
+  tone: string;
+  front: string;
+  back: string;
   perm: boolean;
   semi: boolean;
   highlighted: boolean;
@@ -44,28 +45,29 @@ const initialUser: user = {
   birthday: "",
 };
 
-// const initialUserHair: userInitialHair = {
-//   condition: "",
-//   naturalForm: "",
-//   level: 0,
-//   tone: 0,
-//   front: 0,
-//   back: 0,
-//   perm: false,
-//   semi: false,
-//   highlighted: false,
-//   relaxer: false,
-//   tint: false,
-//   bleach: false,
-//   date: "",
-//   result: "",
-//   texture: "",
-// };
+export const userInitialHairValue: userInitialHair = {
+  condition: "",
+  naturalForm: "",
+  level: "",
+  tone: "",
+  front: "",
+  back: "",
+  perm: false,
+  semi: false,
+  highlighted: false,
+  relaxer: false,
+  tint: false,
+  bleach: false,
+  date: "",
+  result: "",
+  texture: "",
+};
 
 export const AddCustomers = (props: addCustomerFormNumber) => {
-  const { addCustomerFormNumber } = props;
+  const { addCustomerFormNumber, setLoading } = props;
   const [user, setUser] = useState<user>(initialUser);
-  // const [userHair, setUserHair] = useState<userInitialHair>(initialUserHair);
+  const [userHair, setUserHair] =
+    useState<userInitialHair>(userInitialHairValue);
 
   return (
     <>
@@ -77,7 +79,11 @@ export const AddCustomers = (props: addCustomerFormNumber) => {
               setUser={setUser}
             ></FirstAddCustomerForm>
           ) : (
-            <SecondAddCustomerForm></SecondAddCustomerForm>
+            <SecondAddCustomerForm
+              userHair={userHair}
+              setUserHair={setUserHair}
+              setLoading={setLoading}
+            ></SecondAddCustomerForm>
           )}
         </div>
       </div>

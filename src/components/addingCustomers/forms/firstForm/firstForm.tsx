@@ -53,6 +53,7 @@ export const FirstAddCustomerForm = (props: prop) => {
         <label htmlFor="birthday">Birthday</label>
 
         <input
+          required
           placeholder="yyyy-mm-dd"
           type="date"
           className="customerAddFormInput"

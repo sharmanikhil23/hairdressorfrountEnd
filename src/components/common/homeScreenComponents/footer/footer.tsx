@@ -125,6 +125,11 @@ const AddScreenFooter = (prop: setAddCustomerFormNumber) => {
               return;
             }
             elm.style.display = "none";
+            elm = document.getElementById("completedSecond");
+            if (elm == null) {
+              return;
+            }
+            elm.style.backgroundColor = "#eff0f3";
           }}
         >
           Back
@@ -143,6 +148,12 @@ const AddScreenFooter = (prop: setAddCustomerFormNumber) => {
               return;
             }
             elm.style.display = "block";
+
+            elm = document.getElementById("completedSecond");
+            if (elm == null) {
+              return;
+            }
+            elm.style.backgroundColor = "#faed5d";
           }}
         >
           {prop.addCustomerFormNumber === 1 ? "Next" : "Save"}

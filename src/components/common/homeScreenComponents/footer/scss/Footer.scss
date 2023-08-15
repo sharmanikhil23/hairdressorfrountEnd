@@ -4,7 +4,7 @@
   width: 100vw;
   display: block;
   position: sticky;
-  bottom: 0px;
+  bottom: 0;
   background-color: $application_background_color;
   #footerCurve {
     background-color: $footerColor;
@@ -71,19 +71,23 @@
 }
 
 #addScreenFooter {
+  height: 5rem;
   width: 100vw;
   display: block;
-  bottom: 0;
+  bottom: 0px;
   position: sticky;
   background-color: $application_background_color;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   div {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin: 0.5rem auto 0.7rem;
     .addScreenFooterBtn {
+      margin: 0rem 1rem;
       padding: 0.3rem 1rem;
       display: block;
       background-color: $add_button;

@@ -12,7 +12,10 @@
   width: 100%;
 }
 #firstAddCustomerForm #firstAndLastName,
-#firstAddCustomerForm #multiplePhn {
+#firstAddCustomerForm #multiplePhn,
+#firstAddCustomerForm #textureAndCondition,
+#firstAddCustomerForm #levelAndTone,
+#firstAddCustomerForm #frontAndBack {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -21,7 +24,10 @@
   align-items: center;
 }
 #firstAddCustomerForm #firstAndLastName > section,
-#firstAddCustomerForm #multiplePhn > section {
+#firstAddCustomerForm #multiplePhn > section,
+#firstAddCustomerForm #textureAndCondition > section,
+#firstAddCustomerForm #levelAndTone > section,
+#firstAddCustomerForm #frontAndBack > section {
   width: 40%;
 }
 #firstAddCustomerForm #birthday input,

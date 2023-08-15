@@ -1,0 +1,36 @@
+#beforeLoader {
+  z-index: 5;
+  background-color: black;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+}
+
+#loader {
+  border: 10px solid #8e8f90;
+  border-radius: 50%;
+  border-top: 10px solid #faed5d;
+  width: 100px;
+  height: 100px;
+  animation: spinner 4s linear infinite;
+}
+
+#loaderMessage {
+  margin: 1rem 0rem;
+  color: #8e8f90;
+  font-size: 1.5rem;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=loading.css.map */
