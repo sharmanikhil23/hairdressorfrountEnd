@@ -5,8 +5,10 @@
   display: block;
   bottom: 0;
   background-color: $application_background_color;
+  //background-color: transparent !important;
   #footerCurve {
     background-color: $footerColor;
+    //background-color: transparent;
     --b: 0px; /*border*/
     --r: 35px; /*radius*/
     --p: 10px; /*offset from top */
@@ -79,7 +81,7 @@
   justify-content: center;
   align-items: center;
   div {
-    margin: 1rem 0rem;
+    margin: 1.5rem 0rem;
     display: flex;
     flex-direction: row;
     justify-content: center;

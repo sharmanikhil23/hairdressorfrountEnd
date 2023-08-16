@@ -35,7 +35,7 @@ body #root {
 
 @media only screen and (max-width: 600px) {
   .applicationWidth {
-    width: 90vw;
+    width: 93vw;
     margin: 0px auto;
   }
 }

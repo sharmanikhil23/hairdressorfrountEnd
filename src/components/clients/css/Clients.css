@@ -57,4 +57,10 @@
 #beforeClientStart #clientStart .clients .viewDetails {
   text-align: right;
   color: #eed61f;
+}
+
+@media screen and (max-width: 600px) {
+  #clientStart {
+    padding: 0rem 0.1rem;
+  }
 }/*# sourceMappingURL=Clients.css.map */
