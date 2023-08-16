@@ -7,19 +7,25 @@
 
 body {
   width: 100vw;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  max-height: 100%;
+  max-height: -webkit-fill-available;
   height: 100vh;
   display: block;
   position: relative;
   background-color: #eff0f3;
-  overflow: hidden;
 }
 body #root {
   position: relative;
   width: 100vw;
-  min-height: 100%;
+  min-height: 100vh;
   min-height: -webkit-fill-available;
   max-height: 100%;
   max-height: -webkit-fill-available;
+  background-color: #eff0f3;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 .applicationWidth {

@@ -1,18 +1,18 @@
 #beforeClientStart {
+  display: block;
   background-color: #eff0f3;
   width: 100%;
-  height: 80vh;
+  padding-bottom: 0px;
   overflow: auto;
   scrollbar-color: auto;
   scrollbar-width: 1px;
-  -moz-tab-size: 10px;
-    -o-tab-size: 10px;
-       tab-size: 10px;
+  -moz-tab-size: 1px;
+    -o-tab-size: 1px;
+       tab-size: 1px;
   scroll-behavior: smooth;
 }
 #beforeClientStart #clientStart {
   overflow: hidden;
-  padding: 2rem 0.5rem 7rem;
 }
 #beforeClientStart #clientStart .clients {
   margin: 1rem 0rem;

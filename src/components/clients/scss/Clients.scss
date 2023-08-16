@@ -1,17 +1,17 @@
 @import "../../Common/scss/Colors.scss";
 
 #beforeClientStart {
+  display: block;
   background-color: $application_background_color;
   width: 100%;
-  height: 80vh;
+  padding-bottom: 0px;
   overflow: auto;
   scrollbar-color: auto;
   scrollbar-width: 1px;
-  tab-size: 10px;
+  tab-size: 1px;
   scroll-behavior: smooth;
   #clientStart {
     overflow: hidden;
-    padding: 2rem 0.5rem 7rem;
     .clients {
       margin: 1rem 0rem;
       padding: 1rem;
