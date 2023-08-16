@@ -13,6 +13,7 @@
 }
 #beforeClientStart #clientStart {
   overflow: hidden;
+  padding: 0rem 1rem;
 }
 #beforeClientStart #clientStart .clients {
   margin: 1rem 0rem;
