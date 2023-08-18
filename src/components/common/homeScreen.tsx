@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HomeScreenHeader } from "./homeScreenComponents/header/header";
 import { HomeScreenFooter } from "./homeScreenComponents/footer/footer";
 import { CustomerArea } from "../clients/clients";
@@ -18,21 +18,25 @@ import { currentUser, currentUserValues } from "../tsDataTypes/addingUser";
 import "./css/HomeScreen.css";
 
 export const HomeScreen = () => {
-  const [allUser, setAllUser] = useState<currentUser[]>([]);
+  useEffect(() => {
+    let data: string | null = localStorage.getItem("allUsers");
+    if (data != null) {
+      setAllUser(JSON.parse(data));
+    }
+  }, []);
 
   const savingCustomerInitialInfo = (): void => {
-    console.log(allUser);
     setLoading((current) => !current);
-    let data: string | null = sessionStorage.getItem("allUser");
+    let data: string | null = localStorage.getItem("allUsers");
     if (data == null) {
       let temp = [currentUser];
-      sessionStorage.setItem("allUsers", JSON.stringify(temp));
+      localStorage.setItem("allUsers", JSON.stringify(temp));
       setAllUser(temp);
     } else {
       let temp = JSON.parse(data);
-      temp.push(currentUser);
+      temp.unshift(currentUser);
       setAllUser(temp);
-      sessionStorage.setItem("allUsers", JSON.stringify(temp));
+      localStorage.setItem("allUsers", JSON.stringify(temp));
     }
     setAddCustomerFormNumber(1);
     setPageSelector((current) => {
@@ -42,6 +46,8 @@ export const HomeScreen = () => {
     setCurrentUser(currentUserValues);
     setLoading((current) => !current);
   };
+
+  const [allUser, setAllUser] = useState<currentUser[]>([]);
 
   const [pageSelector, setPageSelector] = useState<pageSelector>(
     pageSelectorInitialValue
@@ -73,7 +79,9 @@ export const HomeScreen = () => {
               setCurrentUser={setCurrentUser}
             ></AddCustomers>
           )}
-          {pageSelector.customers && <CustomerArea></CustomerArea>}
+          {pageSelector.customers && (
+            <CustomerArea allUser={allUser}></CustomerArea>
+          )}
           {pageSelector.setting && <Setting></Setting>}
           <HomeScreenFooter
             pageSelector={pageSelector}

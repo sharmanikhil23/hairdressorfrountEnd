@@ -1,29 +1,27 @@
 import React from "react";
-import { data } from "../data";
 
-type Data = {
-  fName: string;
-  lName: string;
-  price: number;
-  visits: number;
-  lastUpdated: string;
-};
+import { allUser } from "./clients";
+import { currentUser } from "../tsDataTypes/addingUser";
 
-export const Clients = () => {
+export const Clients = (prop: allUser) => {
   return (
     <>
-      {data.map((clients: Data) => {
-        let { fName, lName, price, visits, lastUpdated } = clients;
+      {prop.allUser.map((clients: currentUser, index: number) => {
+        let { firstName = "user", lastName = "user" } = clients.userInfo;
+        let visits = 0;
+        let price = 0;
+        let { date = new Date().toISOString().split("T")[0] } =
+          clients.userInitialAnalysis;
         return (
-          <div className="clients">
+          <div className="clients" key={index}>
             <section className="titleAndPrice">
               <h3 className="titleAndPriceCustomerName">
-                {`${fName} ${lName}`}
+                {`${firstName} ${lastName}`}
               </h3>
               <h3>${`${price}`}</h3>
             </section>
             <section className="lastUpdateAndTotalVisit">
-              <p className="lastUpdated">Last updated: {`${lastUpdated}`}</p>
+              <p className="lastUpdated">Last updated: {`${date}`}</p>
               <p>{`${visits}`} visits</p>
             </section>
             <section className="viewDetails">View details</section>
