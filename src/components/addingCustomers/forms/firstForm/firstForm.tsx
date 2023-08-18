@@ -1,18 +1,14 @@
 import React from "react";
 
-import { user } from "../../addCustomer";
-
 import "./css/firstForm.css";
 
-type prop = {
-  user: user;
-  setUser: React.Dispatch<React.SetStateAction<user>>;
-};
+import { currentUser } from "../../../tsDataTypes/addingUser";
+import { currentUserType } from "../../addCustomer";
 
 let todayDate = new Date().toISOString().split("T")[0];
 
-export const FirstAddCustomerForm = (props: prop) => {
-  let { user, setUser } = props;
+export const FirstAddCustomerForm = (props: currentUserType) => {
+  let { currentUser, setCurrentUser } = props;
   return (
     <div id="firstAddCustomerForm">
       <section id="firstAndLastName">
@@ -24,12 +20,18 @@ export const FirstAddCustomerForm = (props: prop) => {
             id="lastName"
             name="lastName"
             onChange={(e) => {
-              setUser((current: user): user => {
-                let data = { ...current, lastName: e.target.value };
-                return data;
+              setCurrentUser((current: currentUser): currentUser => {
+                let temp = {
+                  ...currentUser,
+                  userInfo: {
+                    ...currentUser.userInfo,
+                    lastName: e.target.value,
+                  },
+                };
+                return temp;
               });
             }}
-            value={user.lastName}
+            value={currentUser.userInfo.lastName}
           ></input>
         </section>
         <section className="customerAddFormElmAlighn">
@@ -40,12 +42,18 @@ export const FirstAddCustomerForm = (props: prop) => {
             id="firstName"
             name="firstName"
             onChange={(e) => {
-              setUser((current: user): user => {
-                let data = { ...current, firstName: e.target.value };
-                return data;
+              setCurrentUser((current: currentUser): currentUser => {
+                let temp = {
+                  ...currentUser,
+                  userInfo: {
+                    ...currentUser.userInfo,
+                    firstName: e.target.value,
+                  },
+                };
+                return temp;
               });
             }}
-            value={user.firstName}
+            value={currentUser.userInfo.firstName}
           ></input>
         </section>
       </section>
@@ -61,12 +69,18 @@ export const FirstAddCustomerForm = (props: prop) => {
           name="birthday"
           max={todayDate}
           onChange={(e) => {
-            setUser((current: user): user => {
-              let data = { ...current, birthday: e.target.value };
-              return data;
+            setCurrentUser((current: currentUser): currentUser => {
+              let temp = {
+                ...currentUser,
+                userInfo: {
+                  ...currentUser.userInfo,
+                  birthday: e.target.value,
+                },
+              };
+              return temp;
             });
           }}
-          value={user.birthday}
+          value={currentUser.userInfo.birthday}
         ></input>
       </section>
       <section id="email" className="customerAddFormElmAlighn">
@@ -77,12 +91,18 @@ export const FirstAddCustomerForm = (props: prop) => {
           id="email"
           name="email"
           onChange={(e) => {
-            setUser((current: user): user => {
-              let data = { ...current, email: e.target.value };
-              return data;
+            setCurrentUser((current: currentUser): currentUser => {
+              let temp = {
+                ...currentUser,
+                userInfo: {
+                  ...currentUser.userInfo,
+                  email: e.target.value,
+                },
+              };
+              return temp;
             });
           }}
-          value={user.email}
+          value={currentUser.userInfo.email}
         ></input>
       </section>
       <section id="multiplePhn">
@@ -94,12 +114,18 @@ export const FirstAddCustomerForm = (props: prop) => {
             id="hPhone"
             name="hPhone"
             onChange={(e) => {
-              setUser((current: user): user => {
-                let data = { ...current, hPhone: e.target.value };
-                return data;
+              setCurrentUser((current: currentUser): currentUser => {
+                let temp = {
+                  ...currentUser,
+                  userInfo: {
+                    ...currentUser.userInfo,
+                    hPhone: e.target.value,
+                  },
+                };
+                return temp;
               });
             }}
-            value={user.hPhone}
+            value={currentUser.userInfo.hPhone}
           ></input>
         </section>
         <section className="customerAddFormElmAlighn">
@@ -107,7 +133,19 @@ export const FirstAddCustomerForm = (props: prop) => {
           <input
             type="tel"
             className="customerAddFormInput"
-            value={user.wPhone}
+            onChange={(e) => {
+              setCurrentUser((current: currentUser): currentUser => {
+                let temp = {
+                  ...currentUser,
+                  userInfo: {
+                    ...currentUser.userInfo,
+                    wPhone: e.target.value,
+                  },
+                };
+                return temp;
+              });
+            }}
+            value={currentUser.userInfo.wPhone}
           ></input>
         </section>
       </section>

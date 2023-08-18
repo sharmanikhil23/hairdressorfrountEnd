@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
+import {
+  currentUser,
+  currentUserValues,
+} from "../../../tsDataTypes/addingUser";
 
 import "./css/Header.css";
 
@@ -26,8 +30,11 @@ interface pageSelector {
     SetStateAction<{ addNew: boolean; setting: boolean; customers: boolean }>
   >;
 }
+type setCurrentUser = {
+  setCurrentUser: React.Dispatch<React.SetStateAction<currentUser>>;
+};
 
-type props = addCustomerFormNumber & pageSelector;
+type props = addCustomerFormNumber & pageSelector & setCurrentUser;
 
 export const HomeScreenHeader = (props: props) => {
   const {
@@ -35,6 +42,7 @@ export const HomeScreenHeader = (props: props) => {
     setPageSelector,
     addCustomerFormNumber,
     setAddCustomerFormNumber,
+    setCurrentUser,
   } = props;
   const [search, setSearch] = useState<boolean>(false);
 
@@ -48,6 +56,7 @@ export const HomeScreenHeader = (props: props) => {
               setPageSelector={setPageSelector}
               addCustomerFormNumber={addCustomerFormNumber}
               setAddCustomerFormNumber={setAddCustomerFormNumber}
+              setCurrentUser={setCurrentUser}
             ></AddingCustomer>
           ) : pageSelector.setting === true ? (
             <Setting></Setting>
@@ -120,7 +129,7 @@ const Setting = () => {
 };
 
 const AddingCustomer = (props: props) => {
-  const { setPageSelector, setAddCustomerFormNumber } = props;
+  const { setPageSelector, setAddCustomerFormNumber, setCurrentUser } = props;
 
   return (
     <div id="addCustomerOrCancel" className="applicationheader">
@@ -137,6 +146,7 @@ const AddingCustomer = (props: props) => {
               };
               return temp;
             });
+            setCurrentUser(currentUserValues);
           }}
         ></RxCross1>
         <h1>Add New Customer</h1>

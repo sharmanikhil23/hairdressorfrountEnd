@@ -5,6 +5,10 @@ import { BsPeopleFill, BsPlusLg } from "react-icons/bs";
 //css
 import "./css/Footer.css";
 
+export type savingCustomerInitialInfo = {
+  savingCustomerInitialInfo: () => void;
+};
+
 interface setAddCustomerFormNumber {
   addCustomerFormNumber: number;
   setAddCustomerFormNumber: Dispatch<SetStateAction<number>>;
@@ -25,7 +29,9 @@ interface pageSelector {
   >;
 }
 
-type props = setAddCustomerFormNumber & pageSelector;
+type props = setAddCustomerFormNumber &
+  pageSelector &
+  savingCustomerInitialInfo;
 
 export const HomeScreenFooter = (props: props) => {
   const {
@@ -33,6 +39,7 @@ export const HomeScreenFooter = (props: props) => {
     setPageSelector,
     setAddCustomerFormNumber,
     addCustomerFormNumber,
+    savingCustomerInitialInfo,
   } = props;
   const animatingAddingPage = () => {};
   return (
@@ -41,6 +48,7 @@ export const HomeScreenFooter = (props: props) => {
         <AddScreenFooter
           setAddCustomerFormNumber={setAddCustomerFormNumber}
           addCustomerFormNumber={addCustomerFormNumber}
+          savingCustomerInitialInfo={savingCustomerInitialInfo}
         ></AddScreenFooter>
       ) : (
         <div id="beforeFooterStart">
@@ -107,7 +115,9 @@ export const HomeScreenFooter = (props: props) => {
     </>
   );
 };
-const AddScreenFooter = (prop: setAddCustomerFormNumber) => {
+const AddScreenFooter = (
+  prop: setAddCustomerFormNumber & savingCustomerInitialInfo
+) => {
   return (
     <div id="addScreenFooter">
       <div className="applicationWidth">
@@ -139,21 +149,25 @@ const AddScreenFooter = (prop: setAddCustomerFormNumber) => {
           className="addScreenFooterBtn"
           onClick={(e) => {
             e.preventDefault();
-            prop.setAddCustomerFormNumber(2);
-            let elm: HTMLElement | null = document.getElementById(
-              "addScreenFooterBackBtn"
-            );
+            if (prop.addCustomerFormNumber === 2) {
+              prop.savingCustomerInitialInfo();
+            } else {
+              prop.setAddCustomerFormNumber(2);
+              let elm: HTMLElement | null = document.getElementById(
+                "addScreenFooterBackBtn"
+              );
 
-            if (elm == null) {
-              return;
-            }
-            elm.style.display = "block";
+              if (elm == null) {
+                return;
+              }
+              elm.style.display = "block";
 
-            elm = document.getElementById("completedSecond");
-            if (elm == null) {
-              return;
+              elm = document.getElementById("completedSecond");
+              if (elm == null) {
+                return;
+              }
+              elm.style.backgroundColor = "#faed5d";
             }
-            elm.style.backgroundColor = "#faed5d";
           }}
         >
           {prop.addCustomerFormNumber === 1 ? "Next" : "Save"}

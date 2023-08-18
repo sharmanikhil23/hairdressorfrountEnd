@@ -1,17 +1,14 @@
 import React from "react";
 
-import { userInitialHair } from "../../addCustomer";
+import { currentUser } from "../../../tsDataTypes/addingUser";
+import { currentUserType } from "../../addCustomer";
 
 import "./css/secondForm.css";
 
-type prop = {
-  userHair: userInitialHair;
-  setUserHair: React.Dispatch<React.SetStateAction<userInitialHair>>;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-};
+type prop = currentUserType;
 
 export const SecondAddCustomerForm = (props: prop) => {
-  let { setUserHair } = props;
+  let { currentUser, setCurrentUser } = props;
   return (
     <div id="firstAddCustomerForm">
       <section id="textureAndCondition">
@@ -22,11 +19,18 @@ export const SecondAddCustomerForm = (props: prop) => {
             className="customerAddFormInput"
             name="texture"
             onChange={(e) => {
-              e.preventDefault();
-              setUserHair((current) => {
-                return { ...current, texture: e.target.value };
+              setCurrentUser((current: currentUser): currentUser => {
+                let temp = {
+                  ...currentUser,
+                  userInitialAnalysis: {
+                    ...currentUser.userInitialAnalysis,
+                    texture: e.target.value,
+                  },
+                };
+                return temp;
               });
             }}
+            value={currentUser.userInitialAnalysis.texture}
           >
             <option>Select</option>
             <option value="Fine">Fine</option>
@@ -41,11 +45,18 @@ export const SecondAddCustomerForm = (props: prop) => {
             id="condition"
             className="customerAddFormInput"
             onChange={(e) => {
-              e.preventDefault();
-              setUserHair((current) => {
-                return { ...current, condition: e.target.value };
+              setCurrentUser((current: currentUser): currentUser => {
+                let temp = {
+                  ...currentUser,
+                  userInitialAnalysis: {
+                    ...currentUser.userInitialAnalysis,
+                    condition: e.target.value,
+                  },
+                };
+                return temp;
               });
             }}
+            value={currentUser.userInitialAnalysis.condition}
           >
             <option>Select</option>
             <option value="Dry">Dry</option>
@@ -61,11 +72,18 @@ export const SecondAddCustomerForm = (props: prop) => {
           id="naturalForm"
           className="customerAddFormInput"
           onChange={(e) => {
-            e.preventDefault();
-            setUserHair((current) => {
-              return { ...current, naturalForm: e.target.value };
+            setCurrentUser((current: currentUser): currentUser => {
+              let temp = {
+                ...currentUser,
+                userInitialAnalysis: {
+                  ...currentUser.userInitialAnalysis,
+                  naturalForm: e.target.value,
+                },
+              };
+              return temp;
             });
           }}
+          value={currentUser.userInitialAnalysis.naturalForm}
         >
           <option>Select</option>
           <option value="Curly">Curly</option>
@@ -83,11 +101,18 @@ export const SecondAddCustomerForm = (props: prop) => {
             id="level"
             name="level"
             onChange={(e) => {
-              e.preventDefault();
-              setUserHair((current) => {
-                return { ...current, level: e.target.value };
+              setCurrentUser((current: currentUser): currentUser => {
+                let temp = {
+                  ...currentUser,
+                  userInitialAnalysis: {
+                    ...currentUser.userInitialAnalysis,
+                    level: e.target.value,
+                  },
+                };
+                return temp;
               });
             }}
+            value={currentUser.userInitialAnalysis.level}
           ></input>
         </section>
         <section className="customerAddFormElmAlighn">
@@ -97,11 +122,18 @@ export const SecondAddCustomerForm = (props: prop) => {
             className="customerAddFormInput"
             id="tone"
             onChange={(e) => {
-              e.preventDefault();
-              setUserHair((current) => {
-                return { ...current, tone: e.target.value };
+              setCurrentUser((current: currentUser): currentUser => {
+                let temp = {
+                  ...currentUser,
+                  userInitialAnalysis: {
+                    ...currentUser.userInitialAnalysis,
+                    tone: e.target.value,
+                  },
+                };
+                return temp;
               });
             }}
+            value={currentUser.userInitialAnalysis.tone}
           ></input>
         </section>
       </section>
@@ -114,11 +146,18 @@ export const SecondAddCustomerForm = (props: prop) => {
             className="customerAddFormInput"
             id="front"
             onChange={(e) => {
-              e.preventDefault();
-              setUserHair((current) => {
-                return { ...current, front: e.target.value };
+              setCurrentUser((current: currentUser): currentUser => {
+                let temp = {
+                  ...currentUser,
+                  userInitialAnalysis: {
+                    ...currentUser.userInitialAnalysis,
+                    front: e.target.value,
+                  },
+                };
+                return temp;
               });
             }}
+            value={currentUser.userInitialAnalysis.front}
           ></input>
         </section>
         <section className="customerAddFormElmAlighn">
@@ -128,11 +167,18 @@ export const SecondAddCustomerForm = (props: prop) => {
             className="customerAddFormInput"
             id="back"
             onChange={(e) => {
-              e.preventDefault();
-              setUserHair((current) => {
-                return { ...current, back: e.target.value };
+              setCurrentUser((current: currentUser): currentUser => {
+                let temp = {
+                  ...currentUser,
+                  userInitialAnalysis: {
+                    ...currentUser.userInitialAnalysis,
+                    back: e.target.value,
+                  },
+                };
+                return temp;
               });
             }}
+            value={currentUser.userInitialAnalysis.back}
           ></input>
         </section>
       </section>
@@ -146,10 +192,18 @@ export const SecondAddCustomerForm = (props: prop) => {
               id="perm"
               name="perm"
               onChange={(e) => {
-                setUserHair((current) => {
-                  return { ...current, perm: e.target.checked };
+                setCurrentUser((current: currentUser): currentUser => {
+                  let temp = {
+                    ...currentUser,
+                    userInitialAnalysis: {
+                      ...currentUser.userInitialAnalysis,
+                      perm: e.target.checked,
+                    },
+                  };
+                  return temp;
                 });
               }}
+              checked={currentUser.userInitialAnalysis.perm}
             />
             <label className="form-check-label" htmlFor="perm">
               Perm
@@ -165,10 +219,18 @@ export const SecondAddCustomerForm = (props: prop) => {
               id="semi"
               name="semi"
               onChange={(e) => {
-                setUserHair((current) => {
-                  return { ...current, semi: e.target.checked };
+                setCurrentUser((current: currentUser): currentUser => {
+                  let temp = {
+                    ...currentUser,
+                    userInitialAnalysis: {
+                      ...currentUser.userInitialAnalysis,
+                      semi: e.target.checked,
+                    },
+                  };
+                  return temp;
                 });
               }}
+              checked={currentUser.userInitialAnalysis.semi}
             />
             <label className="form-check-label" htmlFor="semi">
               Semi
@@ -184,10 +246,18 @@ export const SecondAddCustomerForm = (props: prop) => {
               id="highlighted"
               name="highlighted"
               onChange={(e) => {
-                setUserHair((current) => {
-                  return { ...current, highlighted: e.target.checked };
+                setCurrentUser((current: currentUser): currentUser => {
+                  let temp = {
+                    ...currentUser,
+                    userInitialAnalysis: {
+                      ...currentUser.userInitialAnalysis,
+                      highlighted: e.target.checked,
+                    },
+                  };
+                  return temp;
                 });
               }}
+              checked={currentUser.userInitialAnalysis.highlighted}
             />
             <label className="form-check-label" htmlFor="highlighted">
               Highlighted
@@ -203,10 +273,18 @@ export const SecondAddCustomerForm = (props: prop) => {
               id="relaxer"
               name="relaxer"
               onChange={(e) => {
-                setUserHair((current) => {
-                  return { ...current, relaxer: e.target.checked };
+                setCurrentUser((current: currentUser): currentUser => {
+                  let temp = {
+                    ...currentUser,
+                    userInitialAnalysis: {
+                      ...currentUser.userInitialAnalysis,
+                      relaxer: e.target.checked,
+                    },
+                  };
+                  return temp;
                 });
               }}
+              checked={currentUser.userInitialAnalysis.relaxer}
             />
             <label className="form-check-label" htmlFor="relaxer">
               Relaxer
@@ -222,10 +300,18 @@ export const SecondAddCustomerForm = (props: prop) => {
               id="tint"
               name="tint"
               onChange={(e) => {
-                setUserHair((current) => {
-                  return { ...current, tint: e.target.checked };
+                setCurrentUser((current: currentUser): currentUser => {
+                  let temp = {
+                    ...currentUser,
+                    userInitialAnalysis: {
+                      ...currentUser.userInitialAnalysis,
+                      tint: e.target.checked,
+                    },
+                  };
+                  return temp;
                 });
               }}
+              checked={currentUser.userInitialAnalysis.tint}
             />
             <label className="form-check-label" htmlFor="tint">
               Tint
@@ -241,10 +327,18 @@ export const SecondAddCustomerForm = (props: prop) => {
               id="bleach"
               name="bleach"
               onChange={(e) => {
-                setUserHair((current) => {
-                  return { ...current, bleach: e.target.checked };
+                setCurrentUser((current: currentUser): currentUser => {
+                  let temp = {
+                    ...currentUser,
+                    userInitialAnalysis: {
+                      ...currentUser.userInitialAnalysis,
+                      bleach: e.target.checked,
+                    },
+                  };
+                  return temp;
                 });
               }}
+              checked={currentUser.userInitialAnalysis.bleach}
             />
             <label className="form-check-label" htmlFor="bleach">
               Bleach
@@ -260,10 +354,18 @@ export const SecondAddCustomerForm = (props: prop) => {
           className="customerAddFormInput"
           id="initialDate"
           onChange={(e) => {
-            setUserHair((current) => {
-              return { ...current, date: e.target.value };
+            setCurrentUser((current: currentUser): currentUser => {
+              let temp = {
+                ...currentUser,
+                userInitialAnalysis: {
+                  ...currentUser.userInitialAnalysis,
+                  date: e.target.value,
+                },
+              };
+              return temp;
             });
           }}
+          value={currentUser.userInitialAnalysis.date}
         ></input>
       </section>
 
@@ -274,10 +376,18 @@ export const SecondAddCustomerForm = (props: prop) => {
           className="customerAddFormInput"
           id="initialResult"
           onChange={(e) => {
-            setUserHair((current) => {
-              return { ...current, result: e.target.value };
+            setCurrentUser((current: currentUser): currentUser => {
+              let temp = {
+                ...currentUser,
+                userInitialAnalysis: {
+                  ...currentUser.userInitialAnalysis,
+                  result: e.target.value,
+                },
+              };
+              return temp;
             });
           }}
+          value={currentUser.userInitialAnalysis.result}
         ></input>
       </section>
     </div>

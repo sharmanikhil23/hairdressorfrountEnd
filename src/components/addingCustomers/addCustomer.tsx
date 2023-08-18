@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+
+import { currentUser } from "../tsDataTypes/addingUser";
 
 import "./css/addCustomer.css";
 import { FirstAddCustomerForm } from "./forms/firstForm/firstForm";
@@ -6,68 +8,17 @@ import { SecondAddCustomerForm } from "./forms/secondForm/secondForm";
 
 type addCustomerFormNumber = {
   addCustomerFormNumber: number;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export type user = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  hPhone: string;
-  wPhone: string;
-  birthday: string;
+export type currentUserType = {
+  currentUser: currentUser;
+  setCurrentUser: React.Dispatch<React.SetStateAction<currentUser>>;
 };
 
-export type userInitialHair = {
-  texture: string;
-  condition: string;
-  naturalForm: string;
-  level: string;
-  tone: string;
-  front: string;
-  back: string;
-  perm: boolean;
-  semi: boolean;
-  highlighted: boolean;
-  relaxer: boolean;
-  tint: boolean;
-  bleach: boolean;
-  date: string;
-  result: string;
-};
+type prop = addCustomerFormNumber & currentUserType;
 
-const initialUser: user = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  hPhone: "",
-  wPhone: "",
-  birthday: "",
-};
-
-export const userInitialHairValue: userInitialHair = {
-  condition: "",
-  naturalForm: "",
-  level: "",
-  tone: "",
-  front: "",
-  back: "",
-  perm: false,
-  semi: false,
-  highlighted: false,
-  relaxer: false,
-  tint: false,
-  bleach: false,
-  date: "",
-  result: "",
-  texture: "",
-};
-
-export const AddCustomers = (props: addCustomerFormNumber) => {
-  const { addCustomerFormNumber, setLoading } = props;
-  const [user, setUser] = useState<user>(initialUser);
-  const [userHair, setUserHair] =
-    useState<userInitialHair>(userInitialHairValue);
+export const AddCustomers = (props: prop) => {
+  const { currentUser, setCurrentUser, addCustomerFormNumber } = props;
 
   return (
     <>
@@ -75,14 +26,13 @@ export const AddCustomers = (props: addCustomerFormNumber) => {
         <div className="applicationWidth">
           {addCustomerFormNumber === 1 ? (
             <FirstAddCustomerForm
-              user={user}
-              setUser={setUser}
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
             ></FirstAddCustomerForm>
           ) : (
             <SecondAddCustomerForm
-              userHair={userHair}
-              setUserHair={setUserHair}
-              setLoading={setLoading}
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
             ></SecondAddCustomerForm>
           )}
         </div>
