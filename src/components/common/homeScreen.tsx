@@ -21,6 +21,7 @@ export const HomeScreen = () => {
   const [allUser, setAllUser] = useState<currentUser[]>([]);
 
   const savingCustomerInitialInfo = (): void => {
+    console.log(allUser);
     setLoading((current) => !current);
     let data: string | null = sessionStorage.getItem("allUser");
     if (data == null) {
