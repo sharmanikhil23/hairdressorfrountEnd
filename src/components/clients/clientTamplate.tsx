@@ -21,7 +21,12 @@ export const Clients = (prop: allUser) => {
               <h3>${`${price}`}</h3>
             </section>
             <section className="lastUpdateAndTotalVisit">
-              <p className="lastUpdated">Last updated: {`${date}`}</p>
+              <p className="lastUpdated">
+                Last updated:{" "}
+                {date === ""
+                  ? (date = new Date().toISOString().split("T")[0])
+                  : date}
+              </p>
               <p>{`${visits}`} visits</p>
             </section>
             <section className="viewDetails">View details</section>
