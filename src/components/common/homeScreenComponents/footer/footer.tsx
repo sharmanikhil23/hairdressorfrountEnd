@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { MdSettings } from "react-icons/md";
 import { BsPeopleFill, BsPlusLg } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 //css
 import "./css/Footer.css";
@@ -41,7 +42,7 @@ export const HomeScreenFooter = (props: props) => {
     addCustomerFormNumber,
     savingCustomerInitialInfo,
   } = props;
-  const animatingAddingPage = () => {};
+
   return (
     <>
       {pageSelector.addNew === true ? (
@@ -53,21 +54,21 @@ export const HomeScreenFooter = (props: props) => {
       ) : (
         <div id="beforeFooterStart">
           <div id="addIconBefore">
-            <BsPlusLg
-              id="addIcon"
-              onClick={(e) => {
-                e.preventDefault();
-                animatingAddingPage();
-                setPageSelector((current) => {
-                  let temp = {
-                    addNew: true,
-                    setting: false,
-                    customers: false,
-                  };
-                  return temp;
-                });
-              }}
-            ></BsPlusLg>
+            <Link to={"/addCustomer"}>
+              <BsPlusLg
+                id="addIcon"
+                onClick={(e) => {
+                  setPageSelector((current) => {
+                    let temp = {
+                      addNew: true,
+                      setting: false,
+                      customers: false,
+                    };
+                    return temp;
+                  });
+                }}
+              ></BsPlusLg>
+            </Link>
           </div>
           <div id="footerCurve">
             <div className="applicationWidth" id="footerStart">

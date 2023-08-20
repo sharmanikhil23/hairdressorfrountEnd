@@ -5,7 +5,7 @@ import {
   currentUser,
   currentUserValues,
 } from "../../../tsDataTypes/addingUser";
-
+import { Link } from "react-router-dom";
 import "./css/Header.css";
 
 import { Dispatch, SetStateAction } from "react";
@@ -134,21 +134,23 @@ const AddingCustomer = (props: props) => {
   return (
     <div id="addCustomerOrCancel" className="applicationheader">
       <section id="addCustomerOrCancelSection">
-        <RxCross1
-          onClick={(e) => {
-            e.preventDefault();
-            setAddCustomerFormNumber(1);
-            setPageSelector((current: pageSelector1) => {
-              let temp = {
-                addNew: false,
-                setting: false,
-                customers: true,
-              };
-              return temp;
-            });
-            setCurrentUser(currentUserValues);
-          }}
-        ></RxCross1>
+        <Link to={"/"}>
+          <RxCross1
+            onClick={(e) => {
+              setAddCustomerFormNumber(1);
+              setPageSelector((current: pageSelector1) => {
+                let temp = {
+                  addNew: false,
+                  setting: false,
+                  customers: true,
+                };
+                return temp;
+              });
+              setCurrentUser(currentUserValues);
+            }}
+          ></RxCross1>
+        </Link>
+
         <h1>Add New Customer</h1>
       </section>
 

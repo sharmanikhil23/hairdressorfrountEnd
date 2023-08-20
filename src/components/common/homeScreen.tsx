@@ -5,6 +5,7 @@ import { CustomerArea } from "../clients/clients";
 import { Setting } from "../settings/setting";
 import { Loading } from "../loading/loading";
 import { AddCustomers } from "../addingCustomers/addCustomer";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 //importing different types and initial values
 import {
@@ -61,37 +62,83 @@ export const HomeScreen = () => {
     useState<currentUser>(currentUserValues);
 
   return (
-    <>
-      {
-        <>
-          {loading && <Loading></Loading>}
-          <HomeScreenHeader
-            pageSelector={pageSelector}
-            setPageSelector={setPageSelector}
-            addCustomerFormNumber={addCustomerFormNumber}
-            setAddCustomerFormNumber={setAddCustomerFormNumber}
-            setCurrentUser={setCurrentUser}
-          ></HomeScreenHeader>
-          {pageSelector.addNew && (
-            <AddCustomers
+    <RouterProvider
+      router={createBrowserRouter([
+        {
+          path: "/",
+          element: (
+            <MainTemplate
+              pageSelector={pageSelector}
+              setPageSelector={setPageSelector}
               addCustomerFormNumber={addCustomerFormNumber}
-              currentUser={currentUser}
+              setAddCustomerFormNumber={setAddCustomerFormNumber}
               setCurrentUser={setCurrentUser}
-            ></AddCustomers>
-          )}
-          {pageSelector.customers && (
-            <CustomerArea allUser={allUser}></CustomerArea>
-          )}
-          {pageSelector.setting && <Setting></Setting>}
-          <HomeScreenFooter
-            pageSelector={pageSelector}
-            setPageSelector={setPageSelector}
-            setAddCustomerFormNumber={setAddCustomerFormNumber}
-            addCustomerFormNumber={addCustomerFormNumber}
-            savingCustomerInitialInfo={savingCustomerInitialInfo}
-          ></HomeScreenFooter>
-        </>
-      }
+              savingCustomerInitialInfo={savingCustomerInitialInfo}
+              loading={loading}
+            ></MainTemplate>
+          ),
+          children: [
+            {
+              path: "/",
+              element: <CustomerArea allUser={allUser}></CustomerArea>,
+            },
+            {
+              path: "/addCustomer",
+              element: (
+                <AddCustomers
+                  addCustomerFormNumber={addCustomerFormNumber}
+                  currentUser={currentUser}
+                  setCurrentUser={setCurrentUser}
+                ></AddCustomers>
+              ),
+            },
+            { path: "/about", element: <Setting></Setting> },
+          ],
+        },
+        { path: "/*" },
+      ])}
+    ></RouterProvider>
+  );
+};
+
+type props = {
+  pageSelector: pageSelector;
+  setPageSelector: React.Dispatch<React.SetStateAction<pageSelector>>;
+  addCustomerFormNumber: number;
+  setAddCustomerFormNumber: React.Dispatch<React.SetStateAction<number>>;
+  setCurrentUser: React.Dispatch<React.SetStateAction<currentUser>>;
+  savingCustomerInitialInfo: () => void;
+  loading: boolean;
+};
+
+const MainTemplate = (props: props) => {
+  const {
+    pageSelector,
+    setPageSelector,
+    addCustomerFormNumber,
+    setAddCustomerFormNumber,
+    setCurrentUser,
+    savingCustomerInitialInfo,
+    loading,
+  } = props;
+  return (
+    <>
+      {loading && <Loading></Loading>}
+      <HomeScreenHeader
+        pageSelector={pageSelector}
+        setPageSelector={setPageSelector}
+        addCustomerFormNumber={addCustomerFormNumber}
+        setAddCustomerFormNumber={setAddCustomerFormNumber}
+        setCurrentUser={setCurrentUser}
+      ></HomeScreenHeader>
+      <Outlet></Outlet>
+      <HomeScreenFooter
+        pageSelector={pageSelector}
+        setPageSelector={setPageSelector}
+        setAddCustomerFormNumber={setAddCustomerFormNumber}
+        addCustomerFormNumber={addCustomerFormNumber}
+        savingCustomerInitialInfo={savingCustomerInitialInfo}
+      ></HomeScreenFooter>
     </>
   );
 };
