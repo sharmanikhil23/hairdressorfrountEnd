@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { MdSettings } from "react-icons/md";
 import { BsPeopleFill, BsPlusLg } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //css
 import "./css/Footer.css";
@@ -119,6 +119,7 @@ export const HomeScreenFooter = (props: props) => {
 const AddScreenFooter = (
   prop: setAddCustomerFormNumber & savingCustomerInitialInfo
 ) => {
+  const navigator = useNavigate();
   return (
     <div id="addScreenFooter">
       <div className="applicationWidth">
@@ -126,7 +127,6 @@ const AddScreenFooter = (
           id="addScreenFooterBackBtn"
           className="addScreenFooterBtn"
           onClick={(e) => {
-            e.preventDefault();
             prop.setAddCustomerFormNumber(1);
             let elm: HTMLElement | null = document.getElementById(
               "addScreenFooterBackBtn"
@@ -149,9 +149,9 @@ const AddScreenFooter = (
           id="addScreenFooterNextBtn"
           className="addScreenFooterBtn"
           onClick={(e) => {
-            e.preventDefault();
             if (prop.addCustomerFormNumber === 2) {
               prop.savingCustomerInitialInfo();
+              navigator("/");
             } else {
               prop.setAddCustomerFormNumber(2);
               let elm: HTMLElement | null = document.getElementById(
