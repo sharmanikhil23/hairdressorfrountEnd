@@ -73,11 +73,10 @@ export const HomeScreenFooter = (props: props) => {
           <div id="footerCurve">
             <div className="applicationWidth" id="footerStart">
               <div id="allActionButtonsExceptAdd">
-                <button>
+                <Link to={"/"}>
                   <BsPeopleFill
                     className="actionIcons"
                     onClick={(e) => {
-                      e.preventDefault();
                       setPageSelector((current) => {
                         let temp = {
                           addNew: false,
@@ -89,13 +88,12 @@ export const HomeScreenFooter = (props: props) => {
                     }}
                   ></BsPeopleFill>
                   <h2>Customer</h2>
-                </button>
+                </Link>
 
-                <button>
+                <Link to={"/setting"}>
                   <MdSettings
                     className="actionIcons"
                     onClick={(e) => {
-                      e.preventDefault();
                       setPageSelector((current) => {
                         let temp = {
                           addNew: false,
@@ -107,7 +105,7 @@ export const HomeScreenFooter = (props: props) => {
                     }}
                   ></MdSettings>
                   <h2>Setting</h2>
-                </button>
+                </Link>
               </div>
             </div>
           </div>

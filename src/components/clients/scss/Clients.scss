@@ -13,9 +13,12 @@
   #clientStart {
     overflow: hidden;
     padding: 0rem 1rem;
+
     .clients {
+      text-decoration: none;
       margin: 1rem 0rem;
       padding: 1rem;
+      color: black;
       cursor: pointer;
       border-radius: 5px;
       background-color: #fff;

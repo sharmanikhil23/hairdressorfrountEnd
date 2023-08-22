@@ -2,6 +2,9 @@ import React from "react";
 
 import { allUser } from "./clients";
 import { currentUser } from "../tsDataTypes/addingUser";
+import { Link } from "react-router-dom";
+
+import "./css/ParticularClient.css";
 
 export const Clients = (prop: allUser) => {
   return (
@@ -13,7 +16,7 @@ export const Clients = (prop: allUser) => {
         let { date = new Date().toISOString().split("T")[0] } =
           clients.userInitialAnalysis;
         return (
-          <div className="clients" key={index}>
+          <Link className="clients" key={index} to={`/client/${index}`}>
             <section className="titleAndPrice">
               <h3 className="titleAndPriceCustomerName">
                 {`${firstName} ${lastName}`}
@@ -30,7 +33,7 @@ export const Clients = (prop: allUser) => {
               <p>{`${visits}`} visits</p>
             </section>
             <section className="viewDetails">View details</section>
-          </div>
+          </Link>
         );
       })}
     </>

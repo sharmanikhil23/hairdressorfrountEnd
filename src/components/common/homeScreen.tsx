@@ -6,6 +6,7 @@ import { Setting } from "../settings/setting";
 import { Loading } from "../loading/loading";
 import { AddCustomers } from "../addingCustomers/addCustomer";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { ParticularClient } from "../clients/particularClient";
 
 //importing different types and initial values
 import {
@@ -92,10 +93,13 @@ export const HomeScreen = () => {
                 ></AddCustomers>
               ),
             },
-            { path: "/about", element: <Setting></Setting> },
+            { path: "/setting", element: <Setting></Setting> },
           ],
         },
-        { path: "/*" },
+        {
+          path: "/client/:id",
+          element: <ParticularClient></ParticularClient>,
+        },
       ])}
     ></RouterProvider>
   );

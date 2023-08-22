@@ -1,0 +1,81 @@
+@import "../../common/scss/Colors.scss";
+
+#particularClientHeader {
+  display: block;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+
+  div {
+    padding: 1rem 0rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+#particularClientAreaStart {
+  margin-top: 5rem;
+}
+
+.particularClientArea {
+  padding: 0rem 0rem 2rem;
+  .particularElm {
+    margin: 2rem 0rem;
+    .particularClientTitle {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1rem 0rem 0.5rem;
+    }
+    .particularClientDetails {
+      background-color: white;
+      padding: 1rem;
+      .particularClientElm {
+        line-height: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.particularClientElmTitle {
+  color: black;
+}
+.particularClientElmValue {
+  color: $actionbuttonExceptAdd;
+}
+
+#particularClientFooter {
+  width: 100%;
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1rem 0rem;
+    #particularClientFooterForm {
+      cursor: pointer;
+      width: 30%;
+      background-color: $deleteButtonColor;
+      border: none;
+      outline: none;
+      color: $application_background_color;
+      display: block;
+      padding: 6px 0px;
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #particularClientFooterForm {
+    width: 90% !important;
+  }
+}

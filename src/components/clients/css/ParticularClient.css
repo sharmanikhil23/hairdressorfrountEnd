@@ -1,0 +1,79 @@
+#particularClientHeader {
+  display: block;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+}
+#particularClientHeader div {
+  padding: 1rem 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#particularClientAreaStart {
+  margin-top: 5rem;
+}
+
+.particularClientArea {
+  padding: 0rem 0rem 2rem;
+}
+.particularClientArea .particularElm {
+  margin: 2rem 0rem;
+}
+.particularClientArea .particularElm .particularClientTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0rem 0.5rem;
+}
+.particularClientArea .particularElm .particularClientDetails {
+  background-color: white;
+  padding: 1rem;
+}
+.particularClientArea .particularElm .particularClientDetails .particularClientElm {
+  line-height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.particularClientElmTitle {
+  color: black;
+}
+
+.particularClientElmValue {
+  color: #8e8f90;
+}
+
+#particularClientFooter {
+  width: 100%;
+}
+#particularClientFooter div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0rem;
+}
+#particularClientFooter div #particularClientFooterForm {
+  cursor: pointer;
+  width: 30%;
+  background-color: red;
+  border: none;
+  outline: none;
+  color: #eff0f3;
+  display: block;
+  padding: 6px 0px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  #particularClientFooterForm {
+    width: 90% !important;
+  }
+}/*# sourceMappingURL=ParticularClient.css.map */

@@ -20,7 +20,7 @@
   justify-content: space-between;
   align-items: center;
 }
-#beforeFooterStart #footerCurve #footerStart #allActionButtonsExceptAdd button {
+#beforeFooterStart #footerCurve #footerStart #allActionButtonsExceptAdd a {
   background-color: inherit;
   outline: none;
   border: none;
@@ -33,13 +33,13 @@
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
-#beforeFooterStart #footerCurve #footerStart #allActionButtonsExceptAdd button .actionIcons {
+#beforeFooterStart #footerCurve #footerStart #allActionButtonsExceptAdd a .actionIcons {
   font-size: 25px;
 }
-#beforeFooterStart #footerCurve #footerStart #allActionButtonsExceptAdd button h2 {
+#beforeFooterStart #footerCurve #footerStart #allActionButtonsExceptAdd a h2 {
   font-size: 15px;
 }
-#beforeFooterStart #footerCurve #footerStart #allActionButtonsExceptAdd button:active {
+#beforeFooterStart #footerCurve #footerStart #allActionButtonsExceptAdd a:active {
   color: white;
   scale: 1.1 1.1;
 }
